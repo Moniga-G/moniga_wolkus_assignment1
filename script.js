@@ -56,7 +56,7 @@ function loadMovieDetails() {
         movie.addEventListener('click', async () => {
             searchList.classList.add('hide-search-list');
             movieSearchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
+            const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
             const movieDetails = await result.json();
             displayMovieDetails(movieDetails);
         });
@@ -106,7 +106,7 @@ function removeFromFavorites(id) {
 async function displayFavoriteMovies() {
     favoritesList.innerHTML = "";
     for (const id of favoriteMovies) {
-        const result = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=fc1fef96`);
+        const result = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=fc1fef96`);
         const details = await result.json();
         const favoriteItem = document.createElement('div');
         favoriteItem.classList.add('favorite-item');
